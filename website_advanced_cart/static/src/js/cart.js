@@ -2,7 +2,6 @@ odoo.define('website_advanced_cart.cart', function (require) {
     'use strict';
     var ajax = require("web.ajax");
 
-    console.log("===website_advanced_cart======JS LOAD THAI====")
 
     $(document).ready(function(){
 
@@ -36,9 +35,9 @@ odoo.define('website_advanced_cart.cart', function (require) {
                     else{
                         $('<sup class="my_cart_quantity badge badge-primary">'+data+'</sup>').insertAfter("#my_cart i.fa-shopping-cart");
                     }
-//                    setTimeout(function () {
-//                        $('#add_to_cart_custom').popover('hide');
-//                    }, 2000);
+                    setTimeout(function () {
+                        $('#add_to_cart_custom').popover('hide');
+                    }, 2000);
                   }
                 })
             }
