@@ -29,16 +29,16 @@ odoo.define('website_advanced_cart.cart', function (require) {
                 ajax.jsonRpc('/custom_cart', 'call', {'product_template_id': product_template_id, 'add_qty':add_qty}).then(function(data){
                   if(data){
                     $('#add_to_cart_custom').popover('show');
-                    if($('#my_cart .my_cart_quantity').length){
-                        $('#my_cart .my_cart_quantity').text(data);
-                        $('.nav-item').removeClass('d-none');
+                    if($('.o_wsale_my_cart').length){
+                        $('.o_wsale_my_cart .my_cart_quantity').text(data);
+                        $('.o_wsale_my_cart').removeClass('d-none');
                     }
                     else{
                         $('<sup class="my_cart_quantity badge badge-primary">'+data+'</sup>').insertAfter("#my_cart i.fa-shopping-cart");
                     }
-//                    setTimeout(function () {
-//                        $('#add_to_cart_custom').popover('hide');
-//                    }, 2000);
+                    setTimeout(function () {
+                        $('#add_to_cart_custom').popover('hide');
+                    }, 2000);
                   }
                 })
             }
